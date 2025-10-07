@@ -3,311 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TemplateForge</title>
+    <title>TemplaForge - Professional Business Templates</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
         }
         
         body {
-            background-color: #f8f9fa;
-            color: #202124;
+            background: #f8f9fa;
+            color: #333;
             line-height: 1.6;
         }
         
-        /* Google Sites-like Header */
-        .sites-header {
+        /* Header */
+        .header {
             background: white;
-            border-bottom: 1px solid #dadce0;
-            padding: 12px 24px;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
-            top: 0;
             width: 100%;
+            top: 0;
             z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
         }
         
-        .sites-logo {
-            font-size: 22px;
-            font-weight: 500;
-            color: #1a73e8;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .sites-nav {
-            display: flex;
-            gap: 24px;
-        }
-        
-        .sites-nav a {
-            text-decoration: none;
-            color: #5f6368;
-            font-size: 14px;
-            font-weight: 500;
-            padding: 8px 12px;
-            border-radius: 4px;
-            transition: background-color 0.2s;
-        }
-        
-        .sites-nav a:hover {
-            background-color: #f1f3f4;
-        }
-        
-        /* Main Content Area */
-        .sites-main {
-            margin-top: 80px;
-            padding: 40px 24px;
+        .nav {
             max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
         
-        /* Hero Section - Google Sites Style */
-        .sites-hero {
-            background: white;
-            border-radius: 8px;
-            padding: 60px 40px;
-            text-align: center;
-            box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
-            margin-bottom: 40px;
-        }
-        
-        .sites-hero h1 {
-            font-size: 36px;
-            font-weight: 400;
-            color: #202124;
-            margin-bottom: 16px;
-        }
-        
-        .sites-hero p {
-            font-size: 18px;
-            color: #5f6368;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-        
-        .sites-button {
-            background: #1a73e8;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        
-        .sites-button:hover {
-            background: #1765cc;
-        }
-        
-        /* Content Sections */
-        .sites-section {
-            background: white;
-            border-radius: 8px;
-            padding: 40px;
-            margin-bottom: 24px;
-            box-shadow: 0 1px 2px rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
-        }
-        
-        .sites-section h2 {
+        .logo {
             font-size: 24px;
-            font-weight: 400;
-            color: #202124;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #dadce0;
+            font-weight: bold;
+            color: #FF6B35;
         }
         
-        .sites-section p {
-            color: #5f6368;
-            margin-bottom: 16px;
-            font-size: 16px;
+        .nav-links {
+            display: flex;
+            gap: 30px;
         }
         
-        /* Grid Layout */
-        .sites-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin-top: 30px;
-        }
-        
-        .sites-card {
-            background: #f8f9fa;
-            border: 1px solid #dadce0;
-            border-radius: 8px;
-            padding: 24px;
-            transition: box-shadow 0.2s;
-        }
-        
-        .sites-card:hover {
-            box-shadow: 0 1px 3px rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
-        }
-        
-        .sites-card h3 {
-            font-size: 18px;
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
             font-weight: 500;
-            color: #202124;
-            margin-bottom: 12px;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
         
-        .sites-card p {
-            font-size: 14px;
-            color: #5f6368;
+        .nav-links a:hover {
+            background: #f0f0f0;
         }
         
-        /* Footer */
-        .sites-footer {
-            background: white;
-            border-top: 1px solid #dadce0;
-            padding: 24px;
+        /* Pages */
+        .page {
+            display: none;
+            padding: 100px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+        
+        .active {
+            display: block;
+        }
+        
+        /* Hero Section */
+        .hero {
             text-align: center;
-            color: #5f6368;
-            font-size: 14px;
-            margin-top: 60px;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .hero p {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        /* Buttons */
+        .btn {
+            background: #FF6B35;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #FF6B35;
+            color: #FF6B35;
+        }
+        
+        /* Sections */
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .section h3 {
+            color: #FF6B35;
+            margin: 20px 0 10px;
+        }
+        
+        .section p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        
+        .section li {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .section li:before {
+            content: "✓ ";
+            color: #FF6B35;
+            font-weight: bold;
+        }
+        
+        /* Template Cards */
+        .template-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #FF6B35;
+            margin: 20px 0;
+        }
+        
+        .price {
+            font-size: 1.5em;
+            color: #FF6B35;
+            font-weight: bold;
+            margin: 10px 0;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .sites-nav {
-                display: none;
+            .nav-links {
+                gap: 15px;
             }
             
-            .sites-main {
-                padding: 20px 16px;
-                margin-top: 60px;
+            .nav-links a {
+                padding: 6px 12px;
+                font-size: 14px;
             }
             
-            .sites-hero {
-                padding: 40px 20px;
-            }
-            
-            .sites-hero h1 {
-                font-size: 28px;
+            .hero h1 {
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Google Sites Style Header -->
-    <header class="sites-header">
-        <div class="sites-logo">
-            <span>🏗️</span>
-            TemplateForge
-        </div>
-        <nav class="sites-nav">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">🏗️ TemplaForge</div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home')">Home</a>
+                <a href="#" onclick="showPage('about')">About</a>
+                <a href="#" onclick="showPage('contact')">Contact</a>
+                <a href="#" onclick="showPage('free')">Free Template</a>
+                <a href="#" onclick="showPage('premium')">Premium</a>
+                <a href="#" onclick="showPage('ultra')">Ultra Premium</a>
+            </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <main class="sites-main">
-        <!-- Hero Section -->
-        <section class="sites-hero" id="home">
-            <h1>Welcome to TemplateForge</h1>
-            <p>Creating beautiful, responsive websites with professional templates that help your business stand out online.</p>
-            <button class="sites-button">Get Started</button>
-        </section>
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="hero">
+            <h1>AI-Powered Business Templates</h1>
+            <p>Professional | ✔ Affordable | ✔ Customizable</p>
+            <p>Get Organized, Grow Faster!</p>
+        </div>
 
-        <!-- About Section -->
-        <section class="sites-section" id="about">
-            <h2>About TemplateForge</h2>
-            <p>We specialize in creating modern, responsive website templates that are easy to customize and perfect for businesses of all sizes.</p>
-            <p>Our templates are built with the latest web technologies and follow best practices for performance and accessibility.</p>
+        <div class="section">
+            <h2>"Templates That Actually Work for Indian Businesses!"</h2>
             
-            <div class="sites-grid">
-                <div class="sites-card">
-                    <h3>Modern Design</h3>
-                    <p>Clean, contemporary designs that make your website look professional and trustworthy.</p>
-                </div>
-                <div class="sites-card">
-                    <h3>Mobile Friendly</h3>
-                    <p>All our templates are fully responsive and work perfectly on all devices and screen sizes.</p>
-                </div>
-                <div class="sites-card">
-                    <h3>Fast Loading</h3>
-                    <p>Optimized for speed to ensure your visitors have the best possible experience.</p>
-                </div>
+            <div class="template-card">
+                <h3>Ultra-Premium Templates</h3>
+                <p>Complete business solutions with customization</p>
+                <a href="https://www.canva.com/design/DAG0t14tjE4/TsvhV3r79QT5m_bOVJErNw/edit" class="btn" target="_blank">View Ultra Premium Template</a>
             </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="sites-section" id="services">
-            <h2>Our Services</h2>
-            <p>We offer a range of services to help you establish a strong online presence:</p>
             
-            <div class="sites-grid">
-                <div class="sites-card">
-                    <h3>Website Templates</h3>
-                    <p>Ready-to-use professional templates for various business needs and industries.</p>
-                </div>
-                <div class="sites-card">
-                    <h3>Custom Development</h3>
-                    <p>Tailored website solutions built specifically for your unique requirements.</p>
-                </div>
-                <div class="sites-card">
-                    <h3>E-Commerce Solutions</h3>
-                    <p>Online store templates with shopping cart and payment integration features.</p>
-                </div>
-                <div class="sites-card">
-                    <h3>SEO Optimization</h3>
-                    <p>Search engine optimized templates to help you rank higher in search results.</p>
-                </div>
+            <div class="template-card">
+                <h3>Premium Templates</h3>
+                <p>Advanced templates for growing businesses</p>
+                <a href="https://www.canva.com/design/DAG0zo8Rogc/WztS4w9icfO8n_YX00ki4w/edit" class="btn" target="_blank">Premium Template</a>
             </div>
-        </section>
+            
+            <div class="template-card">
+                <h3>Free Templates</h3>
+                <p>Get started with our free templates</p>
+                <a href="https://www.canva.com/design/DAG0tiBnOT8/vks5zQ8RlmdTVulIbFJ4Cg/edit" class="btn btn-outline" target="_blank">Free Template</a>
+            </div>
+        </div>
+    </div>
 
-        <!-- Contact Section -->
-        <section class="sites-section" id="contact">
-            <h2>Contact Us</h2>
-            <p>Ready to get started with your new website? Get in touch with us!</p>
-            <p>Email: contact@templaforge.in</p>
-            <p>Website: templaforge.in</p>
-        </section>
-    </main>
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="section">
+            <h2>About the Creator</h2>
+            <p>Namaste!</p>
+            <p>I'm [rahik], a 13-year-old student and passionate young entrepreneur from India.</p>
+        </div>
 
-    <!-- Footer -->
-    <footer class="sites-footer">
-        <p>&copy; 2024 TemplateForge. All rights reserved.</p>
-        <p>templaforge.in</p>
-    </footer>
+        <div class="section">
+            <h3>Student by Day, Creator by Night</h3>
+            <p>School: [kvkendriyak]</p>
+            <p>Working Hours: 4 PM - 8 PM (After school)</p>
+            <p>Weekend Availability: Full day</p>
+        </div>
+
+        <div class="section">
+            <h3>My Mission</h3>
+            <p>I create affordable, professional business templates to help small businesses grow while balancing my education and dreams.</p>
+        </div>
+
+        <div class="section">
+            <h3>Why Choose Me?</h3>
+            <ul>
+                <li>Fresh, innovative ideas from a young mind</li>
+                <li>Affordable pricing for small businesses</li>
+                <li>Personal touch in every template</li>
+                <li>Learning and growing with each project</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <p><strong>Your support helps a student follow his dreams!</strong></p>
+            <p>Thank you for believing in me.</p>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="hero">
+            <h1>GET YOUR CUSTOM TEMPLATE!</h1>
+            <p>WhatsApp: [9731445749]</p>
+            <p>Response Time: 1-2 Hours</p>
+            <p>Working: 10 AM - 7 PM</p>
+        </div>
+
+        <div class="section">
+            <h2>"We Don't Just Sell Templates - We Solve Business Problems!"</h2>
+        </div>
+
+        <div class="section">
+            <h2>READY TO START?</h2>
+            <p>SEND US A MESSAGE!</p>
+            <a href="https://wa.me/919731445749?text=Hi!%20I%20want%20to%20order%20a%20template%20from%20TemplaForge" class="btn" target="_blank">Contact us on WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Free Template Page -->
+    <div id="free" class="page">
+        <div class="hero">
+            <h1>"Start Free, Upgrade When You See Results!"</h1>
+        </div>
+
+        <div class="section">
+            <h2>FREE BUSINESS TEMPLATES</h2>
+            <ul>
+                <li>Daily Business Planner</li>
+                <li>Basic Expense Tracker</li>
+                <li>Social Media Calendar</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <a href="https://www.canva.com/design/DAG0tiBnOT8/vks5zQ8RlmdTVulIbFJ4Cg/edit" class="btn" target="_blank">Free Template</a>
+            <a href="#" onclick="showPage('premium')" class="btn btn-outline">GO PREMIUM</a>
+        </div>
+    </div>
+
+    <!-- Premium Template Page -->
+    <div id="premium" class="page">
+        <div class="hero">
+            <h1>PREMIUM TEMPLATES - ₹599</h1>
+        </div>
+
+        <div class="section">
+            <ul>
+                <li>Client Management Dashboard</li>
+                <li>Financial Planning Template</li>
+                <li>Project Progress Tracker</li>
+                <li>Sales Funnel Map</li>
+                <li>Marketing Strategy Board</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>"Professional Tools for Serious Business Owners!"</h2>
+            <a href="https://www.canva.com/design/DAG0zo8Rogc/WztS4w9icfO8n_YX00ki4w/edit" class="btn" target="_blank">Premium Template</a>
+            <a href="https://wa.me/919731445749?text=Hi!%20I%20want%20to%20customize%20a%20premium%20template%20from%20TemplaForge" class="btn btn-outline">WhatsApp For Customization</a>
+        </div>
+    </div>
+
+    <!-- Ultra Premium Page -->
+    <div id="ultra" class="page">
+        <div class="hero">
+            <h1>ULTRA-PREMIUM PACKAGE - ₹1499</h1>
+        </div>
+
+        <div class="section">
+            <h2>Complete Business Solution:</h2>
+            <ul>
+                <li>5 Custom Templates</li>
+                <li>Brand Color Integration</li>
+                <li>Logo Implementation</li>
+                <li>Monthly Updates</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Perfect for: Startups, Established Businesses</h3>
+            <p>"When Ready-Made Isn't Enough - We Build From Scratch!"</p>
+            <a href="https://www.canva.com/design/DAG0ztoaWIc/KbaSjAt4Tpq4Rwn-MD51zg/edit" class="btn" target="_blank">View Our Prototype</a>
+        </div>
+    </div>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('.sites-nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
             });
-        });
-
-        // Add some interactivity
-        document.querySelectorAll('.sites-card').forEach(card => {
-            card.addEventListener('click', function() {
-                this.style.transform = 'scale(1.02)';
-                setTimeout(() => {
-                    this.style.transform = 'scale(1)';
-                }, 150);
-            });
-        });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        // Set home as default page
+        showPage('home');
     </script>
 </body>
 </html>
